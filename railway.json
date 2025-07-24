@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "Nixpacks",
+    "buildCommand": "pip install -r requirements.txt && reflex init && reflex export --backend-only"
+  },
+  "deploy": {
+    "startCommand": "gunicorn --workers 1 --bind 0.0.0.0:8000 app:app"
+  }
+}
